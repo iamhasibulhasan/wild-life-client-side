@@ -11,6 +11,7 @@ import Home from "./components/Home/Home/Home";
 import NotFound from './components/NotFound/NotFound';
 import Header from "./components/Header/Header";
 import Login from "./components/Auth/Login/Login";
+import RegisterPhotographer from "./components/Auth/RegisterPhotographer/RegisterPhotographer";
 
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path='/login'>
           <Login></Login>
+        </Route>
+        <Route path='/register-photographer'>
+          <RegisterPhotographer></RegisterPhotographer>
         </Route>
         <Route path='*'>
           <NotFound></NotFound>

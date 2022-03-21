@@ -4,7 +4,7 @@
 =========================================================
 */
 .login-container,
-.card-body {
+.login-body {
     display: flex;
     flex-direction: column;
     align-items: center;
