@@ -1,0 +1,26 @@
+/* ================================================================ 
+                        Google Fonts
+ ================================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+/* ================================================================ 
+                        Desktop CSS
+ ================================================================ */
+.search-container {
+    text-align: center;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.search-container h3 {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+
+/* ================================================================ 
+                        Mobile CSS
+ ================================================================ */
