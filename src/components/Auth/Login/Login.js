@@ -10,7 +10,7 @@ const Login = () => {
             <div className='my-5 login-container'>
                 <img width='20%' src="https://i.ibb.co/dKxqq22/wild-logo.png" alt="" />
                 <div className="card w-50 mt-3 login-div">
-                    <div className="card-body">
+                    <div className="card-body my-5">
                         <span className='login-title'>Login With</span><br />
                         <a href="#" className='social-login-btn'><span className="g-icon"><FcGoogle /></span><span className="g-text">Continue with google</span></a>
                         <a href="#" className='social-login-btn mt-3'><span className="g-icon"><FaFacebook /></span><span className="g-text">Continue with facebook</span></a>   <br />
