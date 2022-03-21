@@ -1,0 +1,76 @@
+/* 
+===================================================================
+                        Main CSS
+===================================================================
+*/
+.all-event {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.all-event img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.event {
+    position: relative;
+    /* border: 1px solid black; */
+    cursor: pointer;
+    overflow: hidden;
+
+}
+
+.event:hover img {
+    transition: transform 0.4s;
+    transform: scale(1.2);
+
+}
+
+.event-txt {
+    position: absolute;
+    top: 83%;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 0 0 8px 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+
+/* 
+===================================================================
+                        Mobile CSS
+===================================================================
+*/
+@media screen and (max-width: 960px) {
+
+    .all-event {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+
+    .event-txt {
+        top: 86%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 
+===================================================================
+                        Mobile CSS
+===================================================================
+*/
