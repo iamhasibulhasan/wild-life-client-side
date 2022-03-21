@@ -1,0 +1,39 @@
+.login-container,
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.social-login-btn {
+    display: flex;
+    /* background-color: #ccc; */
+    align-items: center;
+    width: 75%;
+    border-radius: 50px;
+    text-decoration: none;
+    color: rgb(79, 78, 78);
+    border: 1px solid #ccc;
+    box-shadow: 15px 11px 8px -3px rgba(201, 192, 192, 0.62);
+    -webkit-box-shadow: 15px 11px 8px -3px rgba(201, 192, 192, 0.62);
+    -moz-box-shadow: 15px 11px 8px -3px rgba(201, 192, 192, 0.62);
+}
+
+.social-login-btn:hover {
+    color: rgb(79, 78, 78);
+}
+
+.g-icon {
+    margin-left: 1rem;
+    font-size: 2rem;
+}
+
+.g-text {
+    margin-left: 6rem;
+    font-size: 1.2rem;
+}

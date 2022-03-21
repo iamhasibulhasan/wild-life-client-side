@@ -10,6 +10,7 @@ import {
 import Home from "./components/Home/Home/Home";
 import NotFound from './components/NotFound/NotFound';
 import Header from "./components/Header/Header";
+import Login from "./components/Auth/Login/Login";
 
 
 function App() {
@@ -23,7 +24,9 @@ function App() {
         <Route path='/home'>
           <Home></Home>
         </Route>
-
+        <Route path='/login'>
+          <Login></Login>
+        </Route>
         <Route path='*'>
           <NotFound></NotFound>
         </Route>
