@@ -2,13 +2,31 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import './RegisterPhotographer.css';
-import { Link } from 'react-router-dom';
+import useAuth from './../../../hooks/useAuth';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const RegisterPhotographer = () => {
+    const { user } = useAuth();
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        console.log(data);
-        reset();
+        axios.post('http://localhost:5000/addPhotographer', {
+            ...data,
+            adminMail: user.email
+        })
+            .then(function (res) {
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        toast: true,
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Photographer added successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    reset();
+                }
+            })
     };
 
     return (

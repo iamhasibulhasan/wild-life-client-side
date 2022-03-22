@@ -6,8 +6,11 @@ import { FaCameraRetro } from "react-icons/fa";
 import PhotographerList from './../PhotographerList/PhotographerList';
 import AddEvent from './../AddEvent/AddEvent';
 import RegisterPhotographer from '../../RegisterPhotographer/RegisterPhotographer';
+import { FaSignOutAlt } from "react-icons/fa";
+import useAuth from './../../../../hooks/useAuth';
 
 const Dashboard = () => {
+    const { user, logOut } = useAuth();
     let [active, setActive] = useState('pList');
 
     // console.log(active);
@@ -36,6 +39,7 @@ const Dashboard = () => {
                                 : 'Register Photographer'
                     }
                 </h2>
+                <Link alt='Logout' onClick={logOut} className='login-btn' to='/login'><FaSignOutAlt /></Link> 
             </div>
             <div className="dashboard-content">
                 <div className="sidebar pt-3">

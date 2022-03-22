@@ -8,10 +8,10 @@ import useAuth from './../../../hooks/useAuth';
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
 
+    const spin = () => {
     if (isLoading) {
-        return <div className='spinner'>
-            <Spinner animation="border" />
-        </div>;
+        return <Spinner animation="border" variant="primary" />
+    }
     }
     return (
         <Route
@@ -27,7 +27,7 @@ const PrivateRoute = ({ children, ...rest }) => {
 
             }
         >
-
+            {spin()}
         </Route>
 
     );

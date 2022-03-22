@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import './PhotographerList.css';
-import { BsTrash } from "react-icons/bs";
+
+import axios from 'axios';
+import List from './List';
 
 const PhotographerList = () => {
+
+    const [photographers, setPhotographers] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/photographers')
+            .then(res => setPhotographers(res.data))
+    }, []);
+    // console.log(photographers);
     return (
         <div className='card'>
             <div className="card-body">
@@ -19,36 +29,16 @@ const PhotographerList = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Hasibul</td>
-                            <td>hasibul@gmail.com</td>
-                            <td>22/02/2022</td>
-                            <td>Freelancer Photo</td>
-                            <td>
-                                <a className='btn btn-danger btn-sm' href="#"><BsTrash /></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Akash</td>
-                            <td>hasibul@gmail.com</td>
-                            <td>22/02/2022</td>
-                            <td>Freelancer Photo</td>
-                            <td>
-                                <a className='btn btn-danger btn-sm' href="#"><BsTrash /></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Proma</td>
-                            <td>hasibul@gmail.com</td>
-                            <td>22/02/2022</td>
-                            <td>Freelancer Photo</td>
-                            <td>
-                                <a className='btn btn-danger btn-sm' href="#"><BsTrash /></a>
-                            </td>
-                        </tr>
+
+                        {
+                            photographers.map((p, i) => <List
+                                index={i + 1}
+                                key={p._id}
+                                photographer={p}
+                            ></List>)
+                        }
+
+
                     </tbody>
                 </Table>
             </div>
