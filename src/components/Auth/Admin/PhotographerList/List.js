@@ -25,7 +25,7 @@ const List = (props) => {
         }).then((result) => {
             if (result.isConfirmed) {
                 console.log(id);
-                axios.delete(`http://localhost:5000/photographerDelete/${id}`)
+                axios.delete(`https://obscure-hollows-85216.herokuapp.com/photographerDelete/${id}`)
                     .then(res => {
                         console.log(res);
                         Swal.fire({

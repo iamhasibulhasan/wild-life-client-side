@@ -10,7 +10,7 @@ const PhotographerList = () => {
     const [photographers, setPhotographers] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/photographers')
+        axios.get('https://obscure-hollows-85216.herokuapp.com/photographers')
             .then(res => setPhotographers(res.data))
     }, []);
     // console.log(photographers);

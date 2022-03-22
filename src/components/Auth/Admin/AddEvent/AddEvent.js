@@ -10,7 +10,7 @@ const AddEvent = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
 
-        axios.post('http://localhost:5000/addEvent', {
+        axios.post('https://obscure-hollows-85216.herokuapp.com/addEvent', {
             ...data,
             umail: user.email
         })

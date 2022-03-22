@@ -10,7 +10,7 @@ const RegisterPhotographer = () => {
     const { user } = useAuth();
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        axios.post('http://localhost:5000/addPhotographer', {
+        axios.post('https://obscure-hollows-85216.herokuapp.com/addPhotographer', {
             ...data,
             adminMail: user.email
         })

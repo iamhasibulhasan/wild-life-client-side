@@ -6,7 +6,7 @@ import './Events.css';
 const Events = () => {
     const [events, setEvents] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:5000/events')
+        axios.get('https://obscure-hollows-85216.herokuapp.com/events')
             .then(res => setEvents(res.data))
     }, []);
 
