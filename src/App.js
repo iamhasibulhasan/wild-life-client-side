@@ -12,26 +12,30 @@ import NotFound from './components/NotFound/NotFound';
 import Header from "./components/Header/Header";
 import Login from "./components/Auth/Login/Login";
 import RegisterPhotographer from "./components/Auth/RegisterPhotographer/RegisterPhotographer";
+import Dashboard from "./components/Auth/Admin/Dashboard/Dashboard";
 
 
 function App() {
   return (
     <Router>
-      <Header></Header>
+
       <Switch>
         <Route exact path='/'>
+          <Header></Header>
           <Home></Home>
         </Route>
         <Route path='/home'>
+          <Header></Header>
           <Home></Home>
         </Route>
         <Route path='/login'>
           <Login></Login>
         </Route>
-        <Route path='/register-photographer'>
-          <RegisterPhotographer></RegisterPhotographer>
+        <Route path='/admin'>
+          <Dashboard></Dashboard>
         </Route>
         <Route path='*'>
+          <Header></Header>
           <NotFound></NotFound>
         </Route>
       </Switch>

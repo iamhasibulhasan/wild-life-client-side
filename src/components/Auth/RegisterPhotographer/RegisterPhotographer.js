@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
 import './RegisterPhotographer.css';
+import { Link } from 'react-router-dom';
 
 const RegisterPhotographer = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -13,7 +14,6 @@ const RegisterPhotographer = () => {
     return (
         <Container>
             <div className='register-container text-center my-5'>
-                <img width='20%' src="https://i.ibb.co/dKxqq22/wild-logo.png" alt="" />
                 <div className="register-div mt-3">
                     <div className="card">
                         <div className="card-body register-body my-4">

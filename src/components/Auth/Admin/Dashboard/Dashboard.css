@@ -1,0 +1,66 @@
+.admin-header {
+    display: flex;
+    align-items: center;
+}
+
+.admin-header h2 {
+    margin-left: 8rem;
+    font-size: 33px;
+}
+
+.admin-logo {
+    display: contents;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-column-gap: 16px;
+
+    background-color: rgba(204, 204, 204, 0.597);
+}
+
+.sidebar {
+    background-color: white;
+    height: 100vh;
+    padding: 0 10px;
+}
+
+.sidebar ul {}
+
+.sidebar ul li {
+    margin-bottom: 25px;
+    list-style-type: none;
+}
+
+.sidebar .active {
+    background-color: blue;
+    padding: 5px;
+    border-radius: 5px;
+    color: white !important;
+}
+
+.sidebar ul li {
+    color: black;
+    display: flex;
+    align-items: flex-end;
+}
+
+.sidebar ul a {
+    text-decoration: none;
+}
+
+
+.sidebar span {
+    margin-left: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.li-icon {
+    font-size: 2rem;
+}
+
+.content {
+    width: 99%;
+}

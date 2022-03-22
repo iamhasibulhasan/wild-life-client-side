@@ -3,12 +3,15 @@ import { Container } from 'react-bootstrap';
 import './Login.css';
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
         <Container>
             <div className='my-5 login-container'>
-                <img width='20%' src="https://i.ibb.co/dKxqq22/wild-logo.png" alt="" />
+                <Link className='text-center' to='/'>
+                    <img width='40%' src="https://i.ibb.co/dKxqq22/wild-logo.png" alt="" />
+                </Link>
                 <div className="card w-50 mt-3 login-div">
                     <div className="card-body login-body my-5">
                         <span className='login-title'>Login With</span><br />
