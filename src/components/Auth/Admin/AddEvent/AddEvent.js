@@ -1,20 +1,41 @@
 import React from 'react';
 import './AddEvent.css';
 import { useForm } from "react-hook-form";
+import axios from 'axios';
+import useAuth from './../../../../hooks/useAuth';
+import Swal from 'sweetalert2';
 
 const AddEvent = () => {
+    const { user } = useAuth();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
 
-        reset();
+        axios.post('http://localhost:5000/addEvent', {
+            ...data,
+            umail: user.email
+        })
+            .then(function (res) {
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        toast: true,
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Event added successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    reset();
+                }
+            })
     }
-    console.log(errors.title);
+
     return (
         <div className='card'>
             <div className="card-body">
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='event-form gap-5'>
                         <div>
+                            {/* <span{...register("umail"} value={user.email}>hi</span> */}
                             <label className='mb-2' htmlFor="">Event Title</label><br />
                             {errors.title?.type === 'required' && <span className='error'>Event title is required*</span>}
                             <input className='form-control mb-3' placeholder='Event Title' {...register("title", { required: true })} />

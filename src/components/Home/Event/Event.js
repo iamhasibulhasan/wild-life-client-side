@@ -1,7 +1,9 @@
 import React from 'react';
 import './Event.css';
 
-const Event = () => {
+const Event = (props) => {
+    console.log(props.event);
+    const { title, img } = props.event;
     var randomColor = Math.floor(Math.random() * 16777215).toString(16);
 
     const backgroundColor = {
@@ -11,40 +13,9 @@ const Event = () => {
     // console.log(backgroundColor);
 
     return (
-        <div className='all-event my-5'>
-            <div className="event">
-                <img src="https://i.ibb.co/7bJZ2Kh/animals-1.png" alt="" />
-                <div className='event-txt' style={backgroundColor}>Wild Life Photography</div>
-            </div>
-            <div className="event">
-                <img src="https://i.ibb.co/7bJZ2Kh/animals-1.png" alt="" />
-                <div className='event-txt' style={backgroundColor}>Wild Life Photography</div>
-            </div>
-            <div className="event">
-                <img src="https://i.ibb.co/7bJZ2Kh/animals-1.png" alt="" />
-                <div className='event-txt' style={backgroundColor}>Wild Life Photography</div>
-            </div>
-            <div className="event">
-                <img src="https://i.ibb.co/7bJZ2Kh/animals-1.png" alt="" />
-                <div className='event-txt' style={backgroundColor}>Wild Life Photography</div>
-            </div>
-            <div className="event">
-                <img src="https://i.ibb.co/7bJZ2Kh/animals-1.png" alt="" />
-                <div className='event-txt' style={backgroundColor}>Wild Life Photography</div>
-            </div>
-            <div className="event">
-                <img src="https://i.ibb.co/7bJZ2Kh/animals-1.png" alt="" />
-                <div className='event-txt' style={backgroundColor}>Wild Life Photography</div>
-            </div>
-            <div className="event">
-                <img src="https://i.ibb.co/7bJZ2Kh/animals-1.png" alt="" />
-                <div className='event-txt' style={backgroundColor}>Wild Life Photography</div>
-            </div>
-            <div className="event">
-                <img src="https://i.ibb.co/7bJZ2Kh/animals-1.png" alt="" />
-                <div className='event-txt' style={backgroundColor}>Wild Life Photography</div>
-            </div>
-
+        <div className="event">
+            <img src={img} alt="" />
+            <div className='event-txt' style={backgroundColor}>{title}</div>
         </div>
     );
 };
