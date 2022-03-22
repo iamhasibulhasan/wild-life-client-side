@@ -16,28 +16,11 @@
 
 .login-btn,
 .admin-btn {
-    border-radius: 5px;
     color: #666;
-    font-size: 1rem;
     padding: 10px 18px;
-    position: relative;
-    text-decoration: none;
 }
 
-.login-btn {
-    background-color: #0B5ED7;
-    color: white;
-}
 
-.admin-btn {
-    background-color: #5C636A;
-    color: white;
-}
-
-.login-btn:hover,
-.admin-btn:hover {
-    color: white;
-}
 
 /* 
 =========================================================
@@ -45,10 +28,4 @@
 =========================================================
 */
 
-@media screen and (min-width: 480px) {
-
-    .login-btn,
-    .admin-btn {
-        text-align: center;
-    }
-}
+@media screen and (min-width: 480px) {}

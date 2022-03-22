@@ -3,8 +3,11 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Header.css';
+import useAuth from './../../hooks/useAuth';
+import { FaSignOutAlt } from "react-icons/fa";
 
 const Header = () => {
+    const { user, logOut } = useAuth();
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -17,11 +20,18 @@ const Header = () => {
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/donation">Donation</Nav.Link>
                         <Nav.Link as={Link} to="/events">Events</Nav.Link>
-                        <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
-                        <Link className='login-btn' to='/login'>Login</Link>
-                        <Link className='admin-btn' to='/admin'>Admin</Link>
 
+                        {
+                            user.displayName ? <Nav.Link as={Link} to="/admin">
+                                {user.displayName}
+                            </Nav.Link> : ''
+                        }
+                        {
+                            user.email ?
+                                <Link alt='Logout' onClick={logOut} className='login-btn' to='/login'><FaSignOutAlt /></Link> :
+                                <Nav.Link as={Link} to="/login">Login</Nav.Link>
 
+                        }
 
                     </Nav>
                 </Navbar.Collapse>

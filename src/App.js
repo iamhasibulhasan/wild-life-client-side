@@ -14,13 +14,13 @@ import Login from "./components/Auth/Login/Login";
 import RegisterPhotographer from "./components/Auth/RegisterPhotographer/RegisterPhotographer";
 import Dashboard from "./components/Auth/Admin/Dashboard/Dashboard";
 import AuthProvider from "./contexts/AuthProvider";
+import PrivateRoute from './components/Auth/PrivateRoute/PrivateRoute';
 
 
 function App() {
   return (
     <AuthProvider>
       <Router>
-
         <Switch>
           <Route exact path='/'>
             <Header></Header>
@@ -33,9 +33,9 @@ function App() {
           <Route path='/login'>
             <Login></Login>
           </Route>
-          <Route path='/admin'>
+          <PrivateRoute path='/admin'>
             <Dashboard></Dashboard>
-          </Route>
+          </PrivateRoute>
           <Route path='*'>
             <Header></Header>
             <NotFound></NotFound>

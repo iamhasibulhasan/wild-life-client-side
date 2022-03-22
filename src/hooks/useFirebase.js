@@ -13,10 +13,7 @@ const useFirebase = () => {
     // Google SingIn Method
     const signInUsingGoogle = () => {
         const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                setUser(result.user);
-            })
+        return signInWithPopup(auth, googleProvider);
     };
 
     // ? Sign Auth State Change
