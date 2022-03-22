@@ -13,33 +13,36 @@ import Header from "./components/Header/Header";
 import Login from "./components/Auth/Login/Login";
 import RegisterPhotographer from "./components/Auth/RegisterPhotographer/RegisterPhotographer";
 import Dashboard from "./components/Auth/Admin/Dashboard/Dashboard";
+import AuthProvider from "./contexts/AuthProvider";
 
 
 function App() {
   return (
-    <Router>
+    <AuthProvider>
+      <Router>
 
-      <Switch>
-        <Route exact path='/'>
-          <Header></Header>
-          <Home></Home>
-        </Route>
-        <Route path='/home'>
-          <Header></Header>
-          <Home></Home>
-        </Route>
-        <Route path='/login'>
-          <Login></Login>
-        </Route>
-        <Route path='/admin'>
-          <Dashboard></Dashboard>
-        </Route>
-        <Route path='*'>
-          <Header></Header>
-          <NotFound></NotFound>
-        </Route>
-      </Switch>
-    </Router>
+        <Switch>
+          <Route exact path='/'>
+            <Header></Header>
+            <Home></Home>
+          </Route>
+          <Route path='/home'>
+            <Header></Header>
+            <Home></Home>
+          </Route>
+          <Route path='/login'>
+            <Login></Login>
+          </Route>
+          <Route path='/admin'>
+            <Dashboard></Dashboard>
+          </Route>
+          <Route path='*'>
+            <Header></Header>
+            <NotFound></NotFound>
+          </Route>
+        </Switch>
+      </Router>
+    </AuthProvider>
   );
 }
 
