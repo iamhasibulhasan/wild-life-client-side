@@ -5,6 +5,11 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],"rewrites": [
+      {
+        "source": "!{/bower_components,/src}/**",
+        "destination": "/index.html"
+      }
     ]
   }
 }
